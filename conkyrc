@@ -1,0 +1,36 @@
+# Performance settings
+update_interval 1.0
+
+#
+#  Box position
+#
+# 1440 x 900 screen resolution 
+gap_x 1238
+gap_y 18
+
+# 1280 x 800 screen resolution
+#gap_x 1078
+#gap_y 17
+
+
+# Minimizing to the top the window frame
+border_inner_margin 0
+border_outer_margin 0
+border_width 0
+use_xft yes
+xftfont Sans:size=2
+
+# Window settings
+own_window yes
+own_window_type dock 
+own_window_hints undecorated,above,sticky,skip_taskbar,skip_pager
+own_window_argb_visual yes
+own_window_argb_value 100
+
+# Misc
+draw_graph_borders no
+
+
+TEXT
+${if_empty ${exec cat /proc/net/arp | grep eth1}}${voffset 8} ${downspeedgraph eth0 30,80 23E203 23E203 750}  ${cpugraph 30,80 23E203 23E203}
+${else} ${voffset 8}${downspeedgraph eth1 30,80 23E203 23E203 750}  ${cpugraph 30,80 23E203 23E203}${endif}
