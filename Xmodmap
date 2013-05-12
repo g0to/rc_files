@@ -1,0 +1,25 @@
+!
+! Using apple keyboard model A1048
+!
+
+! Swapping left Command key and left Alt key
+remove Mod1 = Alt_L
+remove Mod4 = Super_L
+keysym Alt_L = Super_L
+keysym Super_L = Alt_L
+add Mod1 = Alt_L
+add Mod4 = Super_L
+
+! Repurpose right Command key for AltGr key (yes, another one)	
+keycode 134 = ISO_Level3_Shift
+
+! Repurpose F14 for multimedia Prev key	
+! Repurpose F15 for multimedia Play key	
+! Repurpose F16 for multimedia Next key	
+keycode 192 = XF86AudioPrev 
+keycode 193 = XF86AudioPlay 
+keycode 194 = XF86AudioNext 
+
+! Swap "/" and "-" (typing slash the American way)
+!keycode 16 = 7 minus 7 minus braceleft seveneighths
+!keycode 61 = slash underscore slash underscore dead_belowdot dead_abovedot
