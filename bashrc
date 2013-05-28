@@ -34,6 +34,15 @@ fi
 # set the prompt 
 PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 
+# If this is an xterm, set the title to user@host
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
 # enable color support of ls
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
